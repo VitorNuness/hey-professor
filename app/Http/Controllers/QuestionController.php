@@ -10,7 +10,6 @@ class QuestionController extends Controller
 {
     public function store(): RedirectResponse
     {
-
         Question::query()->create(
             request()->validate([
                 'question' => [
@@ -24,6 +23,12 @@ class QuestionController extends Controller
                 ],
             ]),
         );
+
+        Question::query()
+            ->create([
+                'question' => request()->question,
+                'is_draft' => true,
+            ]);
 
         return to_route('dashboard');
     }

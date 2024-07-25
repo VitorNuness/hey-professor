@@ -12,6 +12,11 @@ class Question extends Model
     /** @use HasFactory<QuestionFactory> */
     use HasFactory;
 
+    /** @var array<string> $cast */
+    protected $cast = [
+        'draft' => 'bool',
+    ];
+
     /**
      * @return HasMany<Vote>
      */
