@@ -14,7 +14,7 @@ class Question extends Model
 
     /** @var array<string> $cast */
     protected $cast = [
-        'draft' => 'bool',
+        'is_draft' => 'bool',
     ];
 
     /**
