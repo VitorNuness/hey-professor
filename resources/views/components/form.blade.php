@@ -1,6 +1,6 @@
 @props([
     'action',
-    'method'
+    'method' => 'POST'
 ])
 
 <form action="{{ $action }}" method="post">
