@@ -32,10 +32,13 @@
                             <x-table.td>{{ $question->question }}</x-table.td>
                             <x-table.td>
                                 <x-form :action="route('question.publish', $question)" method="PUT">
-                                    <button type="submit" class="hover:underline text-blue-500 mb-4">
+                                    <button type="submit" class="hover:underline text-blue-500">
                                         Publish
                                     </button>
                                 </x-form>
+                                <a href="{{ route('question.edit', $question) }}" class="hover:underline text-blue-500">
+                                    Edit
+                                </a>
                                 <x-form :action="route('question.destroy', $question)" method="DELETE">
                                     <button type="submit" class="hover:underline text-red-500">
                                         Remove
