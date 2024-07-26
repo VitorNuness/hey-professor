@@ -1,23 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
         <x-header>
-            {{ __('Dashboard') }}
+            {{ __('Vote for a question') }}
         </x-header>
     </x-slot>
 
     <x-container>
-        <x-form :action="route('question.store')" method="POST">
-            <x-textarea label="Question" name="question" placeholder="Ask me anything..." />
-            <x-btn.primary>Save</x-btn.primary>
-            <x-btn.reset>Cancel</x-btn.reset>
-        </x-form>
-
-        <hr class="border-gray-700 border-dashed my-4">
-
-        <div class="dark:text-gray-200 uppercase font-bold mb-1">
-            Questions List
-        </div>
-
         <div class="dark:text-gray-400 space-y-4">
             @foreach ($questions as $item)
                 <x-question :question="$item" />
