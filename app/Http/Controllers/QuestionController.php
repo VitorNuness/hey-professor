@@ -78,6 +78,13 @@ class QuestionController extends Controller
         return back();
     }
 
+    public function restore(Question $question): RedirectResponse
+    {
+        $question->restore();
+
+        return back();
+    }
+
     public function destroy(Question $question): RedirectResponse
     {
         Gate::authorize('destroy', $question);
