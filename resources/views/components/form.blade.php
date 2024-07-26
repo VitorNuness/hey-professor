@@ -3,7 +3,7 @@
     'method' => 'POST'
 ])
 
-<form action="{{ $action }}" method="post">
+<form action="{{ $action }}" method="post" {{ $attributes }}>
     @csrf
     @method($method)
 
