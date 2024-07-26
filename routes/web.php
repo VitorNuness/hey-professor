@@ -18,13 +18,14 @@ Route::get('/dashboard', DashboardController::class)->middleware(['auth', 'verif
 Route::middleware('auth')->group(function () {
     // --
     // Question Routes
-    Route::get('question', [QuestionController::class, 'index'])->name('question.index');
-    Route::post('question/store', [QuestionController::class, 'store'])->name('question.store');
-    Route::get('question/{question}/edit', [QuestionController::class, 'edit'])->name('question.edit');
-    Route::delete('question/{question}', [QuestionController::class, 'destroy'])->name('question.destroy');
-    Route::post('question/like/{question}', Question\LikeController::class)->name('question.like');
-    Route::post('question/unlike/{question}', Question\UnlikeController::class)->name('question.unlike');
-    Route::put('question/publish/{question}', Question\PublishController::class)->name('question.publish');
+    Route::get('/question', [QuestionController::class, 'index'])->name('question.index');
+    Route::post('/question/store', [QuestionController::class, 'store'])->name('question.store');
+    Route::get('/question/{question}/edit', [QuestionController::class, 'edit'])->name('question.edit');
+    Route::put('/question/{question}', [QuestionController::class, 'update'])->name('question.update');
+    Route::delete('/question/{question}', [QuestionController::class, 'destroy'])->name('question.destroy');
+    Route::post('/question/like/{question}', Question\LikeController::class)->name('question.like');
+    Route::post('/question/unlike/{question}', Question\UnlikeController::class)->name('question.unlike');
+    Route::put('/question/publish/{question}', Question\PublishController::class)->name('question.publish');
 
     // --
     // Profile Routes
