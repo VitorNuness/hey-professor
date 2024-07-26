@@ -62,5 +62,5 @@ it('should have at least 10 characters', function () {
 test('only authenticated users can create a new question', function () {
     post(route('question.store'), [
         'question' => str_repeat('*', 8) . '?',
-    ])->assertRedirect(round('login'));
+    ])->assertRedirect(route('login'));
 });
